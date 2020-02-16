@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+
+   <RadioGroup
+       android:id="@+id/graph_view"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginStart="28dp"
+       android:layout_marginLeft="8dp"
+       android:layout_marginTop="10dp"
+       android:layout_marginEnd="28dp"
+       android:layout_marginRight="8dp"
+       android:gravity="center_horizontal"
+       android:orientation="horizontal"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent">
+
+
+      <RadioButton
+          android:id="@+id/radio0"
+          android:layout_width="0dp"
+          android:layout_weight="1"
+          android:gravity="center"
+          android:layout_height="40dp"
+          android:background="@drawable/radio_flat_selector"
+          android:button="@android:color/transparent"
+          android:checked="true"
+          android:paddingLeft="16dp"
+          android:paddingTop="3dp"
+          android:paddingRight="16dp"
+          android:paddingBottom="3dp"
+          android:text="Daily"/>
+
+      <RadioButton
+          android:id="@+id/radio1"
+          android:gravity="center"
+          android:layout_width="0dp"
+          android:layout_weight="1"
+          android:layout_height="40dp"
+          android:background="@drawable/radio_flat_selector"
+          android:button="@android:color/transparent"
+          android:paddingLeft="16dp"
+          android:paddingTop="3dp"
+          android:paddingRight="16dp"
+          android:paddingBottom="3dp"
+          android:text="Weekly"/>
+
+   </RadioGroup>
+
+
+   <lecho.lib.hellocharts.view.PieChartView
+       android:id="@+id/piechart"
+       android:padding="10dp"
+       android:layout_width="match_parent"
+       android:layout_height="500dp"/>
+
+</LinearLayout>
