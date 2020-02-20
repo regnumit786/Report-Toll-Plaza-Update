@@ -54,7 +54,7 @@ public class Previous_fragment extends Fragment {
     private ArrayList<PreviousDetails> previousDetailsList;// = new ArrayList<>();
     private String thisDate, shareDate;
     private DatabaseReference databaseReference;
-    private String url = "http://103.95.99.196/api/yesterday.php";
+    private String url = "http://103.197.206.139/api/yesterday.php";
     private List<Norshinddi> todayreport;// = new ArrayList<>();
 
     private FirebaseDatabase database;
@@ -161,7 +161,7 @@ public class Previous_fragment extends Fragment {
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(url, new com.android.volley.Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
-                Log.e("Reponse", String.valueOf(response.length()));
+                Log.e("Response", String.valueOf(response.length()));
 
                 for (int i=0; i<response.length();i++){
                     try {
@@ -205,8 +205,7 @@ public class Previous_fragment extends Fragment {
         requestQueue.add(jsonArrayRequest);
     }
 
-    private void serializeData(List<Norshinddi> todayreport)
-    {
+    private void serializeData(List<Norshinddi> todayreport) {
      //   final ProgressDialog dialog = ProgressDialog.show(getActivity(), "Serialize Data ", "Please wait...", true);
         ArrayList<Norshinddi> Rickshaw_Van = new ArrayList<>();
         ArrayList<Norshinddi> MotorCycle = new ArrayList<>();

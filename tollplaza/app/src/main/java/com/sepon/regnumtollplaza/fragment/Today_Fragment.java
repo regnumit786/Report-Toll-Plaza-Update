@@ -64,8 +64,7 @@ public class Today_Fragment extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.tali_layout, container, false);
 
@@ -85,13 +84,13 @@ public class Today_Fragment extends Fragment {
                dateFormat.parse(dateFormat.format(date)).before(dateFormat.parse("07:00")))
             {
                 //show yesterday data in running fund
-                String url = "http://103.95.99.196/api/yesterday.php";
+                String url = "http://103.197.206.139/api/yesterday.php";
                 Log.e("Running URL", url);
                 getDaysReport(url);
 
             }else{
                 //show today data in running fund
-                String url = "http://103.95.99.196/api/today.php";
+                String url = "http://103.197.206.139/api/today.php";
                 Log.e("Running URL", url);
                 getDaysReport(url);
 
@@ -114,7 +113,7 @@ public class Today_Fragment extends Fragment {
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(url, new com.android.volley.Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
-                Log.e("Reponse", String.valueOf(response.length()));
+                Log.e("Response", String.valueOf(response.length()));
 
                 if (response.length()!=0){
                     for (int i=0; i<response.length();i++) {

@@ -7,8 +7,8 @@ package com.sepon.regnumtollplaza.utility;
  */
 public class URLUtils {
 
-    public static final String BASE_URL = "http://103.95.99.196/";
-    public static final String BASE_URL_NEW = "http://103.95.99.196/";
+    public static final String BASE_URL = "http://103.197.206.139/";
+    public static final String BASE_URL_NEW = "http://103.197.206.139/";
 
 
     public static final String TODAY = "api/today.php/";

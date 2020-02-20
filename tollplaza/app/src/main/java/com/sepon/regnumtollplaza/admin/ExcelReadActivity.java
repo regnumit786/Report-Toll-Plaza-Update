@@ -3,8 +3,10 @@ package com.sepon.regnumtollplaza.admin;
 import android.Manifest;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
@@ -25,6 +27,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -418,8 +422,6 @@ public class ExcelReadActivity extends BaseActivity {
 
             }
         });
-
-
     }
 
     private void showDialog(String excel, String msg) {
@@ -449,12 +451,19 @@ public class ExcelReadActivity extends BaseActivity {
                     Log.e("previous Date ", mCustomDate);
                     dialog.dismiss();
                     uploadRepoert(mCustomDate);
-
+                    /**
+                     * User notify to uploaded data
+                     */
+                    //UploadNotification();
                 }else {
                     //Today
                     Log.e("previous Date ", "null");
                     dialog.dismiss();
                     uploadRepoert();
+                    /**
+                     * User notify to uploaded data
+                     */
+                    //UploadNotification();
                 }
             }
         });
@@ -564,8 +573,28 @@ public class ExcelReadActivity extends BaseActivity {
         Short s = new Short(String.valueOf(uploadData.size()), String.valueOf(ctrlRreport.size()), String.valueOf(uploadReport.size()));
         myRef.child(thisDate).child("short").setValue(s);
         hiddenProgressDialog();
+        UploadNotification();
         Intent intent = new Intent(ExcelReadActivity.this, ChittagongActivity.class);
         startActivity(intent);
+    }
+
+    private void UploadNotification() {
+        Intent intent = new Intent(this, ExcelReadActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this,
+                0,intent,PendingIntent.FLAG_UPDATE_CURRENT);
+        NotificationCompat.Builder notification = new NotificationCompat.Builder(this)
+                .setSmallIcon(R.drawable.logo)
+                .setContentTitle("Report Uploaded")
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                .setOnlyAlertOnce(true)
+                .setContentIntent(pendingIntent)
+                .addAction(R.drawable.logo, "today report upload", pendingIntent)
+                .setAutoCancel(true);
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+
+        notificationManager.notify(0, notification.build());
     }
 
     private Regular serilizeRegularData(ArrayList<Report> uploadReport) {
@@ -644,10 +673,10 @@ public class ExcelReadActivity extends BaseActivity {
         Short s = new Short(String.valueOf(uploadData.size()), String.valueOf(ctrlRreport.size()), String.valueOf(uploadReport.size()));
         myRef.child(previousDate).child("short").setValue(s);
         hiddenProgressDialog();
+        UploadNotification();
         Intent intent = new Intent(ExcelReadActivity.this, ChittagongActivity.class);
         startActivity(intent);
     }
-
 
 
     private void firestore(){

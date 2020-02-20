@@ -267,6 +267,10 @@ public class  Today_Chittagong_fragment extends Fragment implements View.OnClick
          ArrayList<NewReport> allctrlReport = new ArrayList<>();
         // allctrlReport = new ArrayList<>();
 
+
+        /**
+         * Error : android.content.res.Resources$Theme android.content.Context.getTheme()
+         */
         ProgressDialog dialog = ProgressDialog.show(getActivity(), "Getting Ctrl+R Report From Server", "Please wait...", true);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();

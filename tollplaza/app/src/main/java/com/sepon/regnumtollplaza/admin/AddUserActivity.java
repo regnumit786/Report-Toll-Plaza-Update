@@ -67,7 +67,7 @@ public class AddUserActivity extends BaseActivity {
                         }
                     }else {
 
-                        Toast.makeText(AddUserActivity.this, "Passowrd mismatch", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AddUserActivity.this, "Password mismatch", Toast.LENGTH_SHORT).show();
                     }
                 }
             }

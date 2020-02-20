@@ -66,7 +66,7 @@ public class ChorshindduActivity extends AppCompatActivity {
     ArrayList<JSONObject> Heavy_Truck = new ArrayList<>();
     ArrayList<JSONObject> Trailer_Long = new ArrayList<>();
 
-    String url = "http://103.95.99.196/api/today.php";
+    String url = "http://103.197.206.139/api/today.php";
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -115,7 +115,7 @@ public class ChorshindduActivity extends AppCompatActivity {
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(url, new com.android.volley.Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
-                Log.e("Reponse", String.valueOf(response.length()));
+                Log.e("Response", String.valueOf(response.length()));
 
                 for (int i=0; i<response.length();i++){
                     try {
