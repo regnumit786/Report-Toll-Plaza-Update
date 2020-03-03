@@ -56,24 +56,23 @@ public class PlazaAdapter extends RecyclerView.Adapter<PlazaAdapter.PlazaViewHol
             public void onClick(View v) {
                 String plaza = plazaList.get(position).getName();
                 if (plaza.equals("Chittagong")) {
-
                     Intent intent = new Intent(context, ChittagongActivity.class);
                     intent.putExtra("plazaName", plaza);
                     context.startActivity(intent);
 
-                } else if (plaza.equals("ManikGonj")) {
+                } else if (plaza.equals("Manikganj")) {
                     Intent intent = new Intent(context, ManikGong_Axel.class);
                     intent.putExtra("plazaName", plaza);
                     context.startActivity(intent);
-                } else if (plaza.equals("Chorshindu")) {
 
+                } else if (plaza.equals("Charsindur")) {
                     mAuth = FirebaseAuth.getInstance();
                     currentUser = mAuth.getCurrentUser();
                     String email = currentUser.getEmail();
 
                     if (email.equals("mamuntushi@gmail.com")) { //here block the user
-
                         Toast.makeText(context, "Sorry Chorshindu not Live!", Toast.LENGTH_SHORT).show();
+
                     } else {
                         Intent intent = new Intent(context, ChorshindduActivity.class);
                         intent.putExtra("plazaName", plaza);
