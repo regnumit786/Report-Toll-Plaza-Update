@@ -303,7 +303,6 @@ public class  Today_Chittagong_fragment extends Fragment implements View.OnClick
                         }
                     }
 
-
                     allctrlReport.add(report);
                     ct = allctrlReport.size();
                     Log.e("report insert", String.valueOf(ct));

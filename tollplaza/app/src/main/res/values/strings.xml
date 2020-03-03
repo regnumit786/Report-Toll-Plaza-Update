@@ -19,6 +19,10 @@
     <string name="_2_axel">2 Axel</string>
 
 
+    <string name="select_report">Select a Plaza for check Report</string>
+    <string name="open_mail">Open Your Mail</string>
+
+
     <string name="total_vehicle">Total vehicle: </string>
     <string name="ctrl">Ctrl+R: </string>
     <string name="regular">Regular</string>
@@ -28,5 +32,6 @@
     <string name="version">2</string>
     <string name="ChoseEmailClient">email</string>
     <dimen name="textsize2">18sp</dimen>
+
 
 </resources>

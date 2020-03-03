@@ -51,7 +51,6 @@ import java.util.List;
 public class Today_Fragment extends Fragment {
 
     private BroadcastReceiver MyReceiver = null;
-
     private List<Tali> taliList = new ArrayList<>();
     TodayAdapter taliAdapter;
     RecyclerView recyclerView;
@@ -102,7 +101,6 @@ public class Today_Fragment extends Fragment {
       //  getDaysReport(url);
         return view;
     }
-
 
     private void getDaysReport(String url) {
      //   arrayList = new ArrayList<>();
@@ -317,8 +315,6 @@ public class Today_Fragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         TodayAdapter taliAdapter = new TodayAdapter(taliList, getActivity());
         recyclerView.setAdapter(taliAdapter);
-
-
 
         dialog.dismiss();
     }

@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
     TextView warningText;
     Button openGmail;
 
+    int[] image_list= {R.drawable.charshindo_logo, R.drawable.tollview, R.drawable.chittagong_logo};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,13 +115,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void generateplaza() {
-        Plaza plaza = new Plaza(R.drawable.tollview,"Chorshindu");
-        Plaza plaza1 = new Plaza(R.drawable.tollview,"ManikGonj");
-        Plaza plaza3 = new Plaza(R.drawable.tollview,"Chittagong");
+        Plaza plaza = new Plaza(R.drawable.charshindo_logo,"Charsindur");
+        Plaza plaza1 = new Plaza(R.drawable.charshindo_logo,"Manikganj");
+        Plaza plaza3 = new Plaza(R.drawable.charshindo_logo,"Chittagong");
         plazalist.add(plaza);
         plazalist.add(plaza1);
         plazalist.add(plaza3);
-        mPlazaAdapter = new PlazaAdapter(plazalist, MainActivity.this);
+        mPlazaAdapter = new PlazaAdapter(image_list, plazalist, MainActivity.this);
         recyclerView.setAdapter(mPlazaAdapter);
 
     }

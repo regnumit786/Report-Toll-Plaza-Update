@@ -44,7 +44,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 goForUser();
             }
         }else {
-
             email_et = findViewById(R.id.email);
             password_et = findViewById(R.id.password);
             login_btn = findViewById(R.id.login);

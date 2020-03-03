@@ -193,8 +193,6 @@ public class ExcelReadActivity extends BaseActivity {
                 checkInternalStorage();
             }
         });
-
-
     }
 
     private void checkInternalStorage() {
@@ -321,9 +319,8 @@ public class ExcelReadActivity extends BaseActivity {
                             if (report.getDateTime().isEmpty()){
 
                             }else {
-
                                 uploadData.add(report);
-                                Log.e("Readed :", String.valueOf(uploadData.size()));
+                                Log.e("Read :", String.valueOf(uploadData.size()));
                                 //allreport.add(report);
                             }
                         }
@@ -337,8 +334,6 @@ public class ExcelReadActivity extends BaseActivity {
             }
         }).start();
         Log.e(TAG, "report size "+ uploadData.size());
-
-
 
     }
 
@@ -382,7 +377,6 @@ public class ExcelReadActivity extends BaseActivity {
         startActivity(login);
         ExcelReadActivity.this.finish();
     }
-
 
     private void serilizeReport() {
 
@@ -678,7 +672,6 @@ public class ExcelReadActivity extends BaseActivity {
         startActivity(intent);
     }
 
-
     private void firestore(){
         firebaseFirestore = FirebaseFirestore.getInstance();
 
@@ -707,7 +700,6 @@ public class ExcelReadActivity extends BaseActivity {
         }
 
     }
-
 
     private void pickData(){
         // Get Current Date

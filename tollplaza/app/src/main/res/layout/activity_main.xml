@@ -11,7 +11,7 @@
 
     <TextView
         android:textAlignment="center"
-        android:text="Select a Plaza for check Report "
+        android:text="@string/select_report"
         android:layout_width="match_parent"
         android:layout_margin="10dp"
         android:padding="15dp"
@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"/>
 
     <Button
-        android:text="Open Your Mail"
+        android:text="@string/open_mail"
         android:layout_gravity="center_horizontal"
         android:textColor="@color/red_text"
         android:id="@+id/openGmail"

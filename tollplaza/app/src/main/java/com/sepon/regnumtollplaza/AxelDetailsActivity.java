@@ -59,7 +59,6 @@ public class AxelDetailsActivity extends AppCompatActivity {
         lan5text = findViewById(R.id.lan_5);
         //shift = findViewById(R.id.shift_wise);
 
-
         calculateLan();
       //  shiftwise();
 

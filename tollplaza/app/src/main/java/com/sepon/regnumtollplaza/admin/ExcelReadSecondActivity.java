@@ -190,7 +190,6 @@ public class ExcelReadSecondActivity extends BaseActivity {
             }
         });
 
-
     }
 
     private void checkInternalStorage() {
@@ -217,10 +216,10 @@ public class ExcelReadSecondActivity extends BaseActivity {
                 FilePathStrings[i] = listFile[i].getAbsolutePath();
                 // Get the name image file
                 FileNameStrings[i] = listFile[i].getName();
+
             }
 
-            for (int i = 0; i < listFile.length; i++)
-            {
+            for (int i = 0; i < listFile.length; i++) {
                 Log.d("Files", "FileName:" + listFile[i].getName());
             }
 
@@ -668,7 +667,6 @@ public class ExcelReadSecondActivity extends BaseActivity {
         Intent intent = new Intent(ExcelReadSecondActivity.this, ChittagongActivity.class);
         startActivity(intent);
     }
-
 
 
     private void firestore(){
